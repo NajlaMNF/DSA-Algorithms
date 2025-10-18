@@ -1,0 +1,80 @@
+def insertion_sort_asc(arr):
+    for j in range(1, len(arr)):
+        key = arr[j]
+        i = j-1
+
+        while i >= 0 and arr[i] > key:
+            arr[i+1] = arr[i]
+            i = i-1
+        arr[i+1] = key
+
+    #main
+
+n = int(input("Enter how many numbers: "))
+arr = []
+total = 0
+
+for i in range (n):
+    while True:
+        try:
+            num = int(input("Enter number : "))
+            arr.append(num)
+            total = total + num
+            break
+
+        except ValueError:
+            print("Enter valid number")
+            print()
+            continue
+
+print("Original array: ", arr)
+insertion_sort_asc(arr)
+print("Sorted array (Ascending): ", arr)
+
+
+#count
+m = int(input("Enter count number: "))
+count = arr.count(m)
+if count>0:
+    print(count)
+
+
+#remove
+q = int(input("Enter number to remove: "))
+if q in arr:
+    while q in arr:
+        arr.remove(q)
+
+else:
+    print(f"The number is not found in this array")
+
+print("The updated array: ", arr)
+
+
+#min, max
+print("Minimum: ", arr[0])
+print("Maximum: ", arr[-1])
+
+#tot
+print("total: ", total)
+
+#avg
+avg = total/n
+print("Average: ", avg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
